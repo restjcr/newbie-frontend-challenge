@@ -1,0 +1,110 @@
+/*  FONTS
+    font-family: 'Big Shoulders Display', cursive;
+    font-family: 'Lexend Deca', sans-serif;
+*/
+
+@import "variables";
+@import "resets";
+@import "mixins";
+
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5.625rem 0;
+    // border: 2px solid red;
+}
+
+.card{
+    width: 280px;
+    height: 400px;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Lexend Deca', sans-serif;
+    position: relative;
+
+    &__icon{
+        width: 3.75rem;
+        height: 2.5rem;
+    }
+
+    &__title{
+        font-family: 'Big Shoulders Display', cursive;
+        font-weight: 700;
+        font-size: 2rem;
+        color: $very-light-gray;
+        margin-top: 1em;
+    }
+
+    &__description{
+        color: $transparent-white;
+        font-size: 0.8rem;
+        margin-top: 1.5rem;
+        line-height: 1.8em;
+    }
+
+    &__link{
+        text-decoration: none;
+        background-color: $very-light-gray;
+        border: 2px solid $very-light-gray;
+        font-size: 0.8rem;
+        text-align: center;
+        border-radius: 3rem;
+        width: 45%;
+        padding: 0.625rem 1.25rem;
+        position: absolute;
+        bottom: 2.8em;
+    }
+
+    &__link:hover{
+        background-color: transparent;
+        color: $very-light-gray;
+    }
+}
+
+.card--sedans{
+    @include backgroundAndLinkColor($bright-orange);
+
+    border-radius: 0.5em 0.5em 0 0;
+}
+
+.card--suvs{
+    @include backgroundAndLinkColor($dark-cyan);
+}
+
+.card--luxury{
+    @include backgroundAndLinkColor($very-dark-cyan);
+
+    border-radius: 0 0 0.5em 0.5em;
+}
+
+
+@media (min-width: 376px ) and (max-width:1440px) {
+    .container{
+        padding: 0;
+        height: 95vh;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        min-width: 960px;
+    }
+
+    .card{
+        height: 440px;
+    }
+
+    .card--sedans{
+        border-radius: 0.5em 0 0 0.5em;
+    }
+
+    .card--luxury{
+        border-radius: 0 0.5em 0.5em 0;
+    }
+}
+
+.attribution{
+    text-align: center;
+}
+

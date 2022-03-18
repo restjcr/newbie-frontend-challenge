@@ -1,0 +1,7 @@
+@mixin backgroundAndLinkColor($color) {
+    background-color: $color;
+
+    a{
+        color: $color;
+    }
+}
